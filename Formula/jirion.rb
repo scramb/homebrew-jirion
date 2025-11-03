@@ -9,15 +9,20 @@ class Jirion < Formula
   license "NOASSERTION"
 
   depends_on "go" => :build
-  depends_on "fyne-io/fyne/fyne" => :build
 
   def install
+    system "go", "install", "fyne.io/fyne/v2/cmd/fyne@latest"
     system "fyne", "package", "-release", "-os", "darwin", "-icon", "./assets/app.png", "-name", "Jirion", "-appID", "com.scramb.jirion"
   end
 
   if OS.mac? && MacOS.version >= :catalina
     app_path = "Jirion.app"
-    # quarantine_list = Utils.safe_popen_read("xattr", app_path.to_s)
+    quarantine_list = ""
+    begin
+      quarantine_list = Utils.safe_popen_read("xattr", app_path.to_s)
+    rescue ErrorDuringExecution
+      quarantine_list = ""
+    end
     if quarantine_list.include?("com.apple.quarantine")
       chmod 0755, app_path
       system "xattr", "-d", "com.apple.quarantine", app_path
