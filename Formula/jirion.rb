@@ -16,7 +16,7 @@ class Jirion < Formula
   end
 
   if OS.mac? && MacOS.version >= :catalina
-    app_path = prefix/"Jirion.app"
+    app_path = "Jirion.app"
     quarantine_list = Utils.safe_popen_read("xattr", app_path.to_s)
     if quarantine_list.include?("com.apple.quarantine")
       chmod 0755, app_path
