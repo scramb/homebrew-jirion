@@ -13,7 +13,6 @@ class Jirion < Formula
 
   def install
     system "fyne", "package", "-release", "-os", "darwin", "-icon", "./assets/app.png", "-name", "Jirion", "-appID", "com.scramb.jirion"
-    prefix.install Dir["*.app"]
   end
 
   if OS.mac? && MacOS.version >= :catalina
