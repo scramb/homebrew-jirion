@@ -9,7 +9,6 @@ cask "jirion" do
   on_arm do
     url "https://github.com/scramb/Jirion/releases/download/#{version}/Jirion-arm64.tar.gz"
   end
-
   name "Jirion"
   desc "Tool to manage Jira-Cloud Backlog from local application"
   homepage "https://github.com/scramb/Jirion"
