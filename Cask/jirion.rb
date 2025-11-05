@@ -18,6 +18,6 @@ cask "jirion" do
   zap trash: [
     "~/Library/Application Support/Jirion",
     "~/Library/Preferences/fyne/com.scramb.jirion",
-    "~/Library/Saved Application State/com.scramb.jirion.savedState"
+    "~/Library/Saved Application State/com.scramb.jirion.savedState",
   ]
 end
