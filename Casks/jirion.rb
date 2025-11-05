@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 
 cask "jirion" do
+  on_intel do
+    url "https://github.com/scramb/Jirion/releases/download/#{version}/Jirion-Intel.tar.gz"
+  end
+  on_arm do
+    url "https://github.com/scramb/Jirion/releases/download/#{version}/Jirion-arm64.tar.gz"
+  end
   version "0.1.9"
-  sha256 "0862d236ab074635705760ed41bfdd60a0ed729944da0fcc73a43d8a1cd707ae"
+  sha256 "01eaf7944b34917789745b8f4c57ede9cbfcebab183590e96163666eb22c171d"
 
-  url "https://github.com/scramb/Jirion/releases/download/#{version}/Jirion.app.tar.gz"
   name "Jirion"
   desc "Tool to manage Jira-Cloud Backlog from local application"
   homepage "https://github.com/scramb/Jirion"
