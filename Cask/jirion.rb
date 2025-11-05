@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 cask "jirion" do
   version "0.1.9"
   sha256 "0862d236ab074635705760ed41bfdd60a0ed729944da0fcc73a43d8a1cd707ae"
